@@ -13,6 +13,7 @@
 		EF9554B6210447CE00D4F235 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9554B4210447CE00D4F235 /* Main.storyboard */; };
 		EF9554B8210447D100D4F235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9554B7210447D100D4F235 /* Assets.xcassets */; };
 		EF9554BB210447D100D4F235 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9554B9210447D100D4F235 /* LaunchScreen.storyboard */; };
+		EF9554C32104498F00D4F235 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF9554C22104498E00D4F235 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		EF9554B7210447D100D4F235 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF9554BA210447D100D4F235 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF9554BC210447D100D4F235 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF9554C22104498E00D4F235 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F68A25029B196F2CD778817F /* Pods-ChattingQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattingQuiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChattingQuiz/Pods-ChattingQuiz.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 				EF9554B0210447CE00D4F235 /* AppDelegate.swift */,
 				EF9554B2210447CE00D4F235 /* ViewController.swift */,
 				EF9554B4210447CE00D4F235 /* Main.storyboard */,
+				EF9554C22104498E00D4F235 /* GoogleService-Info.plist */,
 				EF9554B7210447D100D4F235 /* Assets.xcassets */,
 				EF9554B9210447D100D4F235 /* LaunchScreen.storyboard */,
 				EF9554BC210447D100D4F235 /* Info.plist */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF9554BB210447D100D4F235 /* LaunchScreen.storyboard in Resources */,
+				EF9554C32104498F00D4F235 /* GoogleService-Info.plist in Resources */,
 				EF9554B8210447D100D4F235 /* Assets.xcassets in Resources */,
 				EF9554B6210447CE00D4F235 /* Main.storyboard in Resources */,
 			);
@@ -185,6 +189,7 @@
 				"${BUILT_PRODUCTS_DIR}/Chatto/Chatto.framework",
 				"${BUILT_PRODUCTS_DIR}/ChattoAdditions/ChattoAdditions.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -196,6 +201,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Chatto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChattoAdditions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",

@@ -13,6 +13,7 @@ target 'ChattingQuiz' do
   pod 'Then'
 
   pod 'Firebase/Core'
+  pod 'Firebase/RemoteConfig'
 
   pod 'Chatto', '= 3.3.1'
   pod 'ChattoAdditions', '= 3.3.1'
