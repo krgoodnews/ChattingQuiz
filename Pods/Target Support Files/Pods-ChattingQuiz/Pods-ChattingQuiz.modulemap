@@ -1,0 +1,6 @@
+framework module Pods_ChattingQuiz {
+  umbrella header "Pods-ChattingQuiz-umbrella.h"
+
+  export *
+  module * { export * }
+}
