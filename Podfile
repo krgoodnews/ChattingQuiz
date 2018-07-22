@@ -17,4 +17,7 @@ target 'ChattingQuiz' do
 
   pod 'Chatto', '= 3.3.1'
   pod 'ChattoAdditions', '= 3.3.1'
+
+  pod 'TextFieldEffects'
+
 end

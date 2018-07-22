@@ -6,6 +6,7 @@
 //  Copyright © 2018년 krgoodnews. All rights reserved.
 //
 
+import Firebase
 import UIKit
 
 @UIApplicationMain
@@ -15,7 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+
+		let rootViewController = LoadingVC()
+		let window = UIWindow()
+		window.rootViewController = rootViewController
+		self.window = window
+		self.window?.makeKeyAndVisible()
+		
+		FirebaseApp.configure()
+		
 		return true
 	}
 
