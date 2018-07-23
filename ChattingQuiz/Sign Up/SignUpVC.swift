@@ -9,6 +9,9 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 fileprivate let minUsernameLength = 2
 fileprivate let maxUsernameLength = 8
@@ -56,12 +59,32 @@ class SignUpVC: ViewController {
 	}
 	
 	func signUp() {
-		Constants.nickname = usernameTextField.text ?? ""
-		let roomListVC = UIStoryboard(name: "GameRoomList", bundle: nil).instantiateInitialViewController()
+
+		Auth.auth().signInAnonymously { (user, error) in
+			
+			guard error == nil else {
+				print(error ?? "")
+				return
+			}
+			
+			
+			guard let uid = Auth.auth().currentUser?.uid else { return }
+			guard let username = self.usernameTextField.text else { return }
+			print("---uid: \(uid), username: \(username)")
+			
+			let values = ["name":username, "uid": Auth.auth().currentUser?.uid]
+			Database.database().reference().child("users").child(uid).setValue(values, withCompletionBlock: { (err, ref) in
+				self.presentGameListVC()
+			})
+			
+		}
 		
-		self.present(roomListVC!, animated: true, completion: nil)
-		
+
 	}
 	
-	
+	private func presentGameListVC() {
+		guard let gameListVC = UIStoryboard(name: "GameList", bundle: nil).instantiateInitialViewController() else { return }
+		
+		self.present(gameListVC, animated: true, completion: nil)
+	}
 }

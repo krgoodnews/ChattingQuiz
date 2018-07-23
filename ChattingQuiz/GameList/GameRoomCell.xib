@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="gameRoomCellResID" reuseIdentifier="gameRoomCellID" id="nWn-df-rLf" customClass="GameRoomCell" customModule="ChattoApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="104"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="357" height="104"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconCrown" translatesAutoresizingMaskIntoConstraints="NO" id="6Cx-lH-g0h">
+                        <rect key="frame" x="16" y="18" width="15" height="15"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09j-8c-xlC">
+                        <rect key="frame" x="34" y="17" width="25" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <color key="textColor" red="0.60392156860000001" green="0.26274509800000001" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방장이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKH-Ba-wYA">
+                        <rect key="frame" x="71" y="17" width="49" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <color key="textColor" red="0.4587862491607666" green="0.45884442329406738" blue="0.45876646041870117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUP-fp-A6M">
+                        <rect key="frame" x="18" y="42" width="321" height="3"/>
+                        <color key="backgroundColor" red="0.90189141035079956" green="0.90199977159500122" blue="0.90185463428497314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="3" id="sZt-oa-vZe"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초성퀴즈 할 사람 구함~!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P16-Yc-c8Y">
+                        <rect key="frame" x="16" y="57" width="216" height="28"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                        <color key="textColor" red="0.25880080461502075" green="0.25883632898330688" blue="0.25878873467445374" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="CUP-fp-A6M" firstAttribute="top" secondItem="09j-8c-xlC" secondAttribute="bottom" constant="8" id="0Lc-db-Uxv"/>
+                <constraint firstItem="P16-Yc-c8Y" firstAttribute="top" secondItem="CUP-fp-A6M" secondAttribute="bottom" constant="12" id="EPK-Iy-FDm"/>
+                <constraint firstItem="NKH-Ba-wYA" firstAttribute="centerY" secondItem="09j-8c-xlC" secondAttribute="centerY" id="J4w-zj-6o4"/>
+                <constraint firstItem="CUP-fp-A6M" firstAttribute="leading" secondItem="nWn-df-rLf" secondAttribute="leading" constant="18" id="J6G-bI-pY4"/>
+                <constraint firstItem="09j-8c-xlC" firstAttribute="leading" secondItem="6Cx-lH-g0h" secondAttribute="trailing" constant="3" id="boR-hL-wRM"/>
+                <constraint firstAttribute="trailing" secondItem="CUP-fp-A6M" secondAttribute="trailing" constant="18" id="gFe-9q-xPR"/>
+                <constraint firstItem="6Cx-lH-g0h" firstAttribute="top" secondItem="nWn-df-rLf" secondAttribute="top" constant="18" id="laA-SL-yT1"/>
+                <constraint firstItem="P16-Yc-c8Y" firstAttribute="leading" secondItem="6Cx-lH-g0h" secondAttribute="leading" id="lxb-Fz-dy2"/>
+                <constraint firstItem="09j-8c-xlC" firstAttribute="centerY" secondItem="6Cx-lH-g0h" secondAttribute="centerY" id="mVW-B9-LEj"/>
+                <constraint firstItem="6Cx-lH-g0h" firstAttribute="leading" secondItem="nWn-df-rLf" secondAttribute="leading" constant="16" id="nHh-Es-UeB"/>
+                <constraint firstItem="NKH-Ba-wYA" firstAttribute="leading" secondItem="09j-8c-xlC" secondAttribute="trailing" constant="12" id="smP-mw-fjI"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="egB-I9-trp"/>
+            <size key="customSize" width="357" height="170"/>
+            <connections>
+                <outlet property="seperatorLine" destination="CUP-fp-A6M" id="63d-is-ZaQ"/>
+                <outlet property="titleLabel" destination="P16-Yc-c8Y" id="Gr7-s2-Srn"/>
+            </connections>
+            <point key="canvasLocation" x="179.5" y="120"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="iconCrown" width="15" height="15"/>
+    </resources>
+</document>

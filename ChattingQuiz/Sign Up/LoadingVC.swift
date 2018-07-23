@@ -38,7 +38,7 @@ class LoadingVC: ViewController {
 	
 	private func fetchConfig() {
 //		welcomeLabel.text = remoteConfig[loadingPhraseConfigKey].stringValue
-		remoteConfig.fetch(withExpirationDuration: TimeInterval(1)) { (status, error) -> Void in
+		remoteConfig.fetch(withExpirationDuration: TimeInterval(0)) { (status, error) -> Void in
 			if status == .success {
 				print("---  Config fetched!")
 				self.remoteConfig.activateFetched()
@@ -70,7 +70,7 @@ class LoadingVC: ViewController {
 			self.present(signUpVC, animated: true)
 		}
 		
-		self.view.backgroundColor = UIColor(color ?? "#FFFFFF")
+//		self.view.backgroundColor = UIColor(color ?? "#FFFFFF")
 		
 	}
 	
