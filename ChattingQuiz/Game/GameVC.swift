@@ -11,17 +11,25 @@ import FirebaseAuth
 
 class GameVC: UIViewController {
 	
+	var game: Game? {
+		didSet {
+			self.title = game?.gameName
+		}
+	}
+	
 	@IBOutlet weak var sendButton: UIButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-	
+		
+		
+		setupView()
 	}
 	
-	func createRoom() {
-		let createRoomInfo = [
-			"uid": Auth.auth().currentUser?.uid
-		]
+	func setupView() {
+		print(game)
 	}
+	
+	
 
 }

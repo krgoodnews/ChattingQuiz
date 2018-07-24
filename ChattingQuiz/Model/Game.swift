@@ -8,6 +8,12 @@
 
 import UIKit
 
+@objcMembers
 class Game: NSObject {
+	
+	var gameUID: String?
+	var gameName: String?
+	
+	var bossUID: String? // 방장 유저 UID
 	
 }

@@ -17,9 +17,11 @@ fileprivate let cellID = "gameRoomCellID"
 fileprivate let headerID = "gameRoomHeader"
 class GameListVC: ViewController {
 	
+	
+	
 	@IBOutlet weak var nicknameOutlet: UIBarButtonItem!
 	@IBOutlet weak var collectionView: UICollectionView!
-	
+	var games = [Game]()
 	var ref: DatabaseReference! = Database.database().reference()
 	
 	override func viewDidLoad() {
@@ -28,9 +30,26 @@ class GameListVC: ViewController {
 		setupNavBar()
 		setupCollectionView()
 		//		setupRx()
+		fetchGames()
 	}
 	
-	
+	private func fetchGames() {
+		ref.child("gameRooms").observe(.value) { (snapshot) in
+			self.games.removeAll()
+			
+			for child in snapshot.children {
+				guard let fchild = child as? DataSnapshot else { continue }
+				let game = Game()
+				game.setValuesForKeys(fchild.value as! [String:Any])
+				
+				self.games.append(game)
+			}
+			
+			DispatchQueue.main.async {
+				self.collectionView.reloadData()
+			}
+		}
+	}
 	
 	private func setupNavBar() {
 
@@ -66,14 +85,32 @@ class GameListVC: ViewController {
 	}
 	
 	@objc private func didTapCreateRoom() {
-		let popupView = CreateGameRoomView.initFromNib()
+		let createGameView = CreateGameView.initFromNib()
+		createGameView.delegate = self
+
+		
+		
 		let window = UIApplication.shared.keyWindow
-		window?.addSubview(popupView)
-		popupView.snp.remakeConstraints { make -> Void in
+		window?.addSubview(createGameView)
+		
+		createGameView.snp.remakeConstraints { make -> Void in
 			make.edges.equalTo(window!)
 		}
 	}
 	
+	
+	// 게임에 입장한다
+	private func enterGame(_ game: Game) {
+		guard let gameVC = UIStoryboard(name: "Game", bundle: nil).instantiateInitialViewController() as? GameVC else { return }
+		gameVC.game = game
+		self.navigationController?.pushViewController(gameVC, animated: true)
+	}
+}
+
+extension GameListVC: CreateGameDelegate {
+	func didCreateGame(game: Game) {
+		self.enterGame(game)
+	}
 }
 
 extension GameListVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -84,12 +121,13 @@ extension GameListVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayo
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 1
+		return games.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! GameRoomCell
 		
+		cell.game = games[indexPath.item]
 		
 		return cell
 	}

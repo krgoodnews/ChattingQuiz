@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8CA7F7A87732D456756743BD /* Pods_ChattingQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A868AF60913E5F7600D3E2 /* Pods_ChattingQuiz.framework */; };
+		EF63F8232106393600386756 /* CreateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8222106393600386756 /* CreateGameView.swift */; };
 		EF9554B1210447CE00D4F235 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9554B0210447CE00D4F235 /* AppDelegate.swift */; };
 		EF9554B6210447CE00D4F235 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9554B4210447CE00D4F235 /* Main.storyboard */; };
 		EF9554B8210447D100D4F235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9554B7210447D100D4F235 /* Assets.xcassets */; };
@@ -25,10 +26,9 @@
 		EF9554DC2104609500D4F235 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9554D72104609500D4F235 /* GradientView.swift */; };
 		EFBDF05B2105AC4D00E285ED /* GameList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFBDF0542105AC4800E285ED /* GameList.storyboard */; };
 		EFBDF05C2105AC4D00E285ED /* GameRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBDF0552105AC4900E285ED /* GameRoomCell.swift */; };
-		EFBDF05D2105AC4D00E285ED /* CreateGameRoom.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFBDF0562105AC4A00E285ED /* CreateGameRoom.xib */; };
+		EFBDF05D2105AC4D00E285ED /* CreateGame.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFBDF0562105AC4A00E285ED /* CreateGame.xib */; };
 		EFBDF05E2105AC4D00E285ED /* GameListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBDF0572105AC4A00E285ED /* GameListVC.swift */; };
 		EFBDF05F2105AC4D00E285ED /* GameRoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFBDF0582105AC4B00E285ED /* GameRoomCell.xib */; };
-		EFBDF0602105AC4D00E285ED /* CreateGameRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBDF0592105AC4C00E285ED /* CreateGameRoomView.swift */; };
 		EFBDF0612105AC4D00E285ED /* GameRoomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBDF05A2105AC4C00E285ED /* GameRoomHeader.swift */; };
 		EFBDF0642105AEAF00E285ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBDF0632105AEAF00E285ED /* User.swift */; };
 		EFBDF0672105ED4000E285ED /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBDF0662105ED4000E285ED /* GameVC.swift */; };
@@ -41,6 +41,7 @@
 /* Begin PBXFileReference section */
 		1DE49AB5BD737BAD09C48806 /* Pods-ChattingQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattingQuiz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChattingQuiz/Pods-ChattingQuiz.debug.xcconfig"; sourceTree = "<group>"; };
 		40A868AF60913E5F7600D3E2 /* Pods_ChattingQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChattingQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF63F8222106393600386756 /* CreateGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGameView.swift; sourceTree = "<group>"; };
 		EF9554AD210447CE00D4F235 /* ChattingQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChattingQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF9554B0210447CE00D4F235 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF9554B5210447CE00D4F235 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,10 +61,9 @@
 		EF9554D72104609500D4F235 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		EFBDF0542105AC4800E285ED /* GameList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameList.storyboard; sourceTree = "<group>"; };
 		EFBDF0552105AC4900E285ED /* GameRoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoomCell.swift; sourceTree = "<group>"; };
-		EFBDF0562105AC4A00E285ED /* CreateGameRoom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateGameRoom.xib; sourceTree = "<group>"; };
+		EFBDF0562105AC4A00E285ED /* CreateGame.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateGame.xib; sourceTree = "<group>"; };
 		EFBDF0572105AC4A00E285ED /* GameListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListVC.swift; sourceTree = "<group>"; };
 		EFBDF0582105AC4B00E285ED /* GameRoomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameRoomCell.xib; sourceTree = "<group>"; };
-		EFBDF0592105AC4C00E285ED /* CreateGameRoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGameRoomView.swift; sourceTree = "<group>"; };
 		EFBDF05A2105AC4C00E285ED /* GameRoomHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoomHeader.swift; sourceTree = "<group>"; };
 		EFBDF0632105AEAF00E285ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EFBDF0662105ED4000E285ED /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
@@ -181,8 +181,8 @@
 		EFBDF0532105AC2100E285ED /* GameList */ = {
 			isa = PBXGroup;
 			children = (
-				EFBDF0562105AC4A00E285ED /* CreateGameRoom.xib */,
-				EFBDF0592105AC4C00E285ED /* CreateGameRoomView.swift */,
+				EFBDF0562105AC4A00E285ED /* CreateGame.xib */,
+				EF63F8222106393600386756 /* CreateGameView.swift */,
 				EFBDF0542105AC4800E285ED /* GameList.storyboard */,
 				EFBDF0572105AC4A00E285ED /* GameListVC.swift */,
 				EFBDF0552105AC4900E285ED /* GameRoomCell.swift */,
@@ -288,7 +288,7 @@
 				EF9554C72104506400D4F235 /* LaunchScreen.storyboard in Resources */,
 				EF9554B8210447D100D4F235 /* Assets.xcassets in Resources */,
 				EFBDF05F2105AC4D00E285ED /* GameRoomCell.xib in Resources */,
-				EFBDF05D2105AC4D00E285ED /* CreateGameRoom.xib in Resources */,
+				EFBDF05D2105AC4D00E285ED /* CreateGame.xib in Resources */,
 				EFBDF06B2105EEDC00E285ED /* ChatInputBar.xib in Resources */,
 				EFBDF06F2105F77F00E285ED /* Game.storyboard in Resources */,
 				EF9554B6210447CE00D4F235 /* Main.storyboard in Resources */,
@@ -374,11 +374,11 @@
 				EF9554D92104609500D4F235 /* ViewController.swift in Sources */,
 				EF9554C52104503600D4F235 /* LoadingVC.swift in Sources */,
 				EF9554D82104609500D4F235 /* Constants.swift in Sources */,
-				EFBDF0602105AC4D00E285ED /* CreateGameRoomView.swift in Sources */,
 				EF9554DB2104609500D4F235 /* StyleGuide.swift in Sources */,
 				EFBDF0672105ED4000E285ED /* GameVC.swift in Sources */,
 				EFBDF05E2105AC4D00E285ED /* GameListVC.swift in Sources */,
 				EFBDF06D2105F43F00E285ED /* ChatInputBar.swift in Sources */,
+				EF63F8232106393600386756 /* CreateGameView.swift in Sources */,
 				EFBDF0692105EDE100E285ED /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

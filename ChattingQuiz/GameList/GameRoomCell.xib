@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="gameRoomCellResID" reuseIdentifier="gameRoomCellID" id="nWn-df-rLf" customClass="GameRoomCell" customModule="ChattoApp" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="gameRoomCellResID" reuseIdentifier="gameRoomCellID" id="nWn-df-rLf" customClass="GameRoomCell" customModule="ChattingQuiz" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="357" height="104"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -66,6 +66,7 @@
             <viewLayoutGuide key="safeArea" id="egB-I9-trp"/>
             <size key="customSize" width="357" height="170"/>
             <connections>
+                <outlet property="bossLabel" destination="NKH-Ba-wYA" id="dy7-t2-2mC"/>
                 <outlet property="seperatorLine" destination="CUP-fp-A6M" id="63d-is-ZaQ"/>
                 <outlet property="titleLabel" destination="P16-Yc-c8Y" id="Gr7-s2-Srn"/>
             </connections>

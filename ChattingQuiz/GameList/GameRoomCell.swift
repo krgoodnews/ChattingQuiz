@@ -7,9 +7,26 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class GameRoomCell: UICollectionViewCell {
 	
+	var game: Game? {
+		didSet {
+			guard let game = game else { return }
+			self.titleLabel.text = game.gameName
+			
+			// set Boss's name
+			let ref = Database.database().reference()
+			ref.child("users").child(game.bossUID ?? "").observe(.value) { (snapshot) in
+				let value = snapshot.value as? NSDictionary
+				let name = value?["name"] as? String
+				self.bossLabel.text = name
+			}
+			
+		}
+	}
+	@IBOutlet weak var bossLabel: UILabel!
 	@IBOutlet weak var titleLabel: UILabel!
 	
 	@IBOutlet weak var seperatorLine: UIView!
