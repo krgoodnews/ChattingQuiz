@@ -63,7 +63,7 @@ class SignUpVC: ViewController {
 		Auth.auth().signInAnonymously { (user, error) in
 			
 			guard error == nil else {
-				print(error ?? "")
+				print("-- error by signInAnonymously: \(error.debugDescription)")
 				return
 			}
 			

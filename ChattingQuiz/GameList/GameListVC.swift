@@ -34,12 +34,13 @@ class GameListVC: ViewController {
 	}
 	
 	private func fetchGames() {
-		ref.child("gameRooms").observe(.value) { (snapshot) in
+		ref.child("games").observe(.value) { (snapshot) in
 			self.games.removeAll()
 			
 			for child in snapshot.children {
 				guard let fchild = child as? DataSnapshot else { continue }
 				let game = Game()
+				game.gameUID = fchild.key
 				game.setValuesForKeys(fchild.value as! [String:Any])
 				
 				self.games.append(game)
@@ -102,7 +103,8 @@ class GameListVC: ViewController {
 	// 게임에 입장한다
 	private func enterGame(_ game: Game) {
 		guard let gameVC = UIStoryboard(name: "Game", bundle: nil).instantiateInitialViewController() as? GameVC else { return }
-		gameVC.game = game
+		gameVC.gameUID = game.gameUID
+//		gameVC.game = game
 		self.navigationController?.pushViewController(gameVC, animated: true)
 	}
 }
@@ -141,8 +143,14 @@ extension GameListVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayo
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		guard let gameVC = UIStoryboard(name: "Game", bundle: nil).instantiateInitialViewController() else { return }
+		let selectedGame = games[indexPath.item]
+		guard let gameVC = UIStoryboard(name: "Game", bundle: nil).instantiateInitialViewController() as? GameVC else { return }
+		
+		gameVC.gameUID = selectedGame.gameUID
+		
 		self.navigationController?.pushViewController(gameVC, animated: true)
+
+		
 	}
 	
 	

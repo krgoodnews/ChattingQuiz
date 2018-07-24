@@ -60,7 +60,7 @@ class CreateGameView: UIView {
 			.disposed(by: disposeBag)
 		
 		createRoomButton.rx.tap
-			.subscribe({ [weak self] _ in self?.didTapCreateRoom() })
+			.subscribe({ [weak self] _ in self?.didTapCreateGame() })
 			.disposed(by: disposeBag)
 		
 	}
@@ -85,18 +85,18 @@ class CreateGameView: UIView {
 		})
 	}
 	
-	private func didTapCreateRoom() {
-		var createRoomInfo = [
+	private func didTapCreateGame() {
+		let uid = Auth.auth().currentUser?.uid ?? ""
+		var createGameInfo: Dictionary<String,Any> = [
 			"bossUID": Auth.auth().currentUser?.uid,
 			"gameName": nameTextField.text!
 		]
 
-		ref.child("gameRooms").childByAutoId().setValue(createRoomInfo) { (err, ref) in
-			createRoomInfo["gameUID"] = ref.key
+		ref.child("games").childByAutoId().setValue(createGameInfo) { (err, ref) in
+			createGameInfo["gameUID"] = ref.key
 			
 			let createdGame = Game()
-			print(createRoomInfo)
-			createdGame.setValuesForKeys(createRoomInfo)
+			createdGame.gameUID = ref.key
 			
 			self.delegate?.didCreateGame(game: createdGame)
 			self.closeEvent()
