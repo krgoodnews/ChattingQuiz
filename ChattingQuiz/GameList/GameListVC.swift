@@ -41,6 +41,7 @@ class GameListVC: ViewController {
 				guard let fchild = child as? DataSnapshot else { continue }
 				let game = Game()
 				game.gameUID = fchild.key
+	
 				game.setValuesForKeys(fchild.value as! [String:Any])
 				
 				self.games.append(game)

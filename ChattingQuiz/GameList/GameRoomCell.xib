@@ -47,14 +47,22 @@
                         <color key="textColor" red="0.25880080461502075" green="0.25883632898330688" blue="0.25878873467445374" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cG-fg-tkk">
+                        <rect key="frame" x="316.5" y="17.5" width="24.5" height="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="CUP-fp-A6M" firstAttribute="top" secondItem="09j-8c-xlC" secondAttribute="bottom" constant="8" id="0Lc-db-Uxv"/>
                 <constraint firstItem="P16-Yc-c8Y" firstAttribute="top" secondItem="CUP-fp-A6M" secondAttribute="bottom" constant="12" id="EPK-Iy-FDm"/>
+                <constraint firstItem="1cG-fg-tkk" firstAttribute="centerY" secondItem="NKH-Ba-wYA" secondAttribute="centerY" id="Gne-NH-nPV"/>
                 <constraint firstItem="NKH-Ba-wYA" firstAttribute="centerY" secondItem="09j-8c-xlC" secondAttribute="centerY" id="J4w-zj-6o4"/>
                 <constraint firstItem="CUP-fp-A6M" firstAttribute="leading" secondItem="nWn-df-rLf" secondAttribute="leading" constant="18" id="J6G-bI-pY4"/>
+                <constraint firstItem="egB-I9-trp" firstAttribute="trailing" secondItem="1cG-fg-tkk" secondAttribute="trailing" constant="16" id="WRe-g9-lWh"/>
                 <constraint firstItem="09j-8c-xlC" firstAttribute="leading" secondItem="6Cx-lH-g0h" secondAttribute="trailing" constant="3" id="boR-hL-wRM"/>
                 <constraint firstAttribute="trailing" secondItem="CUP-fp-A6M" secondAttribute="trailing" constant="18" id="gFe-9q-xPR"/>
                 <constraint firstItem="6Cx-lH-g0h" firstAttribute="top" secondItem="nWn-df-rLf" secondAttribute="top" constant="18" id="laA-SL-yT1"/>
@@ -69,6 +77,7 @@
                 <outlet property="bossLabel" destination="NKH-Ba-wYA" id="dy7-t2-2mC"/>
                 <outlet property="seperatorLine" destination="CUP-fp-A6M" id="63d-is-ZaQ"/>
                 <outlet property="titleLabel" destination="P16-Yc-c8Y" id="Gr7-s2-Srn"/>
+                <outlet property="userCountLabel" destination="1cG-fg-tkk" id="LUG-0p-5zq"/>
             </connections>
             <point key="canvasLocation" x="179.5" y="120"/>
         </collectionViewCell>

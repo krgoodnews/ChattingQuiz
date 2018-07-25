@@ -10,6 +10,8 @@
 		8CA7F7A87732D456756743BD /* Pods_ChattingQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A868AF60913E5F7600D3E2 /* Pods_ChattingQuiz.framework */; };
 		EF63F8232106393600386756 /* CreateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8222106393600386756 /* CreateGameView.swift */; };
 		EF63F8252106EC9200386756 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8242106EC9200386756 /* Chat.swift */; };
+		EF63F8272108D1EC00386756 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8262108D1EC00386756 /* UserCell.swift */; };
+		EF63F8292108D33C00386756 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8282108D33C00386756 /* UIView+.swift */; };
 		EF9554B1210447CE00D4F235 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9554B0210447CE00D4F235 /* AppDelegate.swift */; };
 		EF9554B6210447CE00D4F235 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9554B4210447CE00D4F235 /* Main.storyboard */; };
 		EF9554B8210447D100D4F235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9554B7210447D100D4F235 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		40A868AF60913E5F7600D3E2 /* Pods_ChattingQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChattingQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF63F8222106393600386756 /* CreateGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGameView.swift; sourceTree = "<group>"; };
 		EF63F8242106EC9200386756 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		EF63F8262108D1EC00386756 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		EF63F8282108D33C00386756 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		EF9554AD210447CE00D4F235 /* ChattingQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChattingQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF9554B0210447CE00D4F235 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF9554B5210447CE00D4F235 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				EF9554D42104609500D4F235 /* SocketIOManager.swift */,
 				EF9554D52104609500D4F235 /* StyleGuide.swift */,
 				EF9554D62104609500D4F235 /* View */,
+				EF63F8282108D33C00386756 /* UIView+.swift */,
 			);
 			path = "Basic Source";
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 			children = (
 				EFBDF0662105ED4000E285ED /* GameVC.swift */,
 				EFBDF06E2105F77F00E285ED /* Game.storyboard */,
+				EF63F8262108D1EC00386756 /* UserCell.swift */,
 				EFBDF06C2105F43F00E285ED /* ChatInputBar.swift */,
 				EFBDF06A2105EEDC00E285ED /* ChatInputBar.xib */,
 			);
@@ -372,8 +378,10 @@
 				EFBDF0612105AC4D00E285ED /* GameRoomHeader.swift in Sources */,
 				EF9554CB2104540A00D4F235 /* UIColor+.swift in Sources */,
 				EF9554DC2104609500D4F235 /* GradientView.swift in Sources */,
+				EF63F8292108D33C00386756 /* UIView+.swift in Sources */,
 				EF9554B1210447CE00D4F235 /* AppDelegate.swift in Sources */,
 				EF9554CF2104607500D4F235 /* SignUpVC.swift in Sources */,
+				EF63F8272108D1EC00386756 /* UserCell.swift in Sources */,
 				EFBDF0642105AEAF00E285ED /* User.swift in Sources */,
 				EF9554DA2104609500D4F235 /* SocketIOManager.swift in Sources */,
 				EF9554D92104609500D4F235 /* ViewController.swift in Sources */,

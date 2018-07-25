@@ -24,10 +24,14 @@ class GameRoomCell: UICollectionViewCell {
 				self.bossLabel.text = name
 			}
 			
+			// set UserCount
+			self.userCountLabel.text = "\(game.usersCount)명"
+			
 		}
 	}
 	@IBOutlet weak var bossLabel: UILabel!
 	@IBOutlet weak var titleLabel: UILabel!
+	@IBOutlet weak var userCountLabel: UILabel!
 	
 	@IBOutlet weak var seperatorLine: UIView!
 	

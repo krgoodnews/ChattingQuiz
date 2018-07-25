@@ -16,7 +16,7 @@ class Game: NSObject {
 	
 	var bossUID: String? // 방장 유저 UID
 	
-	var users_count: Int?
+	var usersCount: Int = 0
 	
 	public var users: Dictionary<String, Bool> = [:] // 채팅방 참여자
 	public var comments: Dictionary<String, Comment> = [:] // 채팅방 내용

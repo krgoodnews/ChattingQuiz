@@ -65,25 +65,34 @@ class LoadingVC: ViewController {
 			self.present(alert, animated: true)
 			
 		} else { // 로그인 화면으로 넘어가기
-			
-			if let _ = Auth.auth().currentUser?.uid { // 이미 로그인 되어있을시
-				guard let gameListVC = UIStoryboard(name: "GameList", bundle: nil).instantiateInitialViewController() else { return }
-				
-				self.present(gameListVC, animated: true, completion: nil)
-			} else {
-				guard let signUpVC = UIStoryboard(name: "SignUp", bundle: nil).instantiateInitialViewController() else { return }
-				
-				self.present(signUpVC, animated: true)
+			guard let uid = Auth.auth().currentUser?.uid else {
+				self.openSignUp()
+				return
 			}
-
 			
-			
+			let ref = Database.database().reference()
+			ref.child("users").child(uid).observe(.value) { (snapshot) in
+				if snapshot.exists() {
+					self.openGameList()
+				} else {
+					self.openSignUp()
+				}
+			}
 		}
-		
-//		self.view.backgroundColor = UIColor(color ?? "#FFFFFF")
 		
 	}
 	
+	private func openGameList() {
+		guard let gameListVC = UIStoryboard(name: "GameList", bundle: nil).instantiateInitialViewController() else { return }
+		
+		self.present(gameListVC, animated: true, completion: nil)
+	}
+	
+	private func openSignUp() {
+		guard let signUpVC = UIStoryboard(name: "SignUp", bundle: nil).instantiateInitialViewController() else { return }
+		
+		self.present(signUpVC, animated: true)
+	}
 	private func setupViews() {
 		view.addSubview(imgView)
 
