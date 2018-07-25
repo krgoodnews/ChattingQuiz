@@ -26,6 +26,7 @@ class GameVC: UIViewController {
 	
 	let ref = Database.database().reference().child("games")
 	
+	var userCountButton: UIBarButtonItem! // right BarButtonItem
 	@IBOutlet weak var sendButton: UIButton!
 	
 	override func viewDidLoad() {
@@ -40,7 +41,7 @@ class GameVC: UIViewController {
 		ref.child(uid).observe(.value) { (snapshot) in
 			let dic = snapshot.value as! [String:Any]
 			self.title = dic["gameName"] as? String ?? ""
-			
+			self.setupNavBar(userCount: (dic["users"] as? [String:Bool])?.count ?? 0)
 		}
 	}
 	
@@ -59,18 +60,31 @@ class GameVC: UIViewController {
 	}
 	
 	func setupView() {
-//		print(game)
+		setupNavBar(userCount: 0)
+	}
+	
+	
+	private func setupNavBar(userCount: Int) {
+		userCountButton = UIBarButtonItem(title: userCount > 0 ? String(userCount) : "", style: .done, target: self, action: #selector(didTapUserCount))
+		self.navigationItem.rightBarButtonItem = userCountButton
+	}
+	@objc private func didTapUserCount() {
+		
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(true)
 		
-//		guard let game = game else { return }
-//		guard let uid = Auth.auth().currentUser?.uid else { return }
-//
-//		ref.child("games").child(game.gameUID).child("users").child(uid).removeValue()
-		
 	}
 	
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		
+		guard let gameUID = gameUID else { return }
+		
+		guard let uid = Auth.auth().currentUser?.uid else { return }
+		
+		ref.child(gameUID).child("users").child(uid).removeValue()
+	}
 	
 }

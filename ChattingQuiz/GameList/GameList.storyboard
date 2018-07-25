@@ -95,7 +95,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="vIV-T9-P1W">
-                        <barButtonItem key="rightBarButtonItem" title="NickName" style="plain" id="HOK-zD-5Zp"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="HOK-zD-5Zp"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="FFc-AF-qE0" id="ddz-lm-8eQ"/>
