@@ -17,7 +17,7 @@ extension UIColor {
 	}
 	
 	@nonobjc class var vividPurple: UIColor {
-		return UIColor(red: 144.0 / 255.0, green: 19.0 / 255.0, blue: 254.0 / 255.0, alpha: 1.0)
+		return UIColor(red: 200 / 255.0, green: 85.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
 	}
 	
 	@nonobjc class var liliac: UIColor {
