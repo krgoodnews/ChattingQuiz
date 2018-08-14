@@ -11,6 +11,10 @@
 		EF562DB7212286D300DA02E9 /* GameVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DB6212286D300DA02E9 /* GameVC+CollectionView.swift */; };
 		EF562DB9212286EB00DA02E9 /* GameVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DB8212286EB00DA02E9 /* GameVC+TableView.swift */; };
 		EF562DBC2122AAB600DA02E9 /* MyCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF562DBB2122AAB600DA02E9 /* MyCommentCell.xib */; };
+		EF562DBE2122B3B100DA02E9 /* YourCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF562DBD2122B3B100DA02E9 /* YourCommentCell.xib */; };
+		EF562DC02122B68500DA02E9 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DBF2122B68500DA02E9 /* CommentCell.swift */; };
+		EF562DC22122B6F500DA02E9 /* MyCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DC12122B6F500DA02E9 /* MyCommentCell.swift */; };
+		EF562DC42122BC4900DA02E9 /* YourCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DC32122BC4900DA02E9 /* YourCommentCell.swift */; };
 		EF63F8232106393600386756 /* CreateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8222106393600386756 /* CreateGameView.swift */; };
 		EF63F8252106EC9200386756 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8242106EC9200386756 /* Chat.swift */; };
 		EF63F8272108D1EC00386756 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8262108D1EC00386756 /* UserCell.swift */; };
@@ -50,6 +54,10 @@
 		EF562DB6212286D300DA02E9 /* GameVC+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameVC+CollectionView.swift"; sourceTree = "<group>"; };
 		EF562DB8212286EB00DA02E9 /* GameVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameVC+TableView.swift"; sourceTree = "<group>"; };
 		EF562DBB2122AAB600DA02E9 /* MyCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCommentCell.xib; sourceTree = "<group>"; };
+		EF562DBD2122B3B100DA02E9 /* YourCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourCommentCell.xib; sourceTree = "<group>"; };
+		EF562DBF2122B68500DA02E9 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		EF562DC12122B6F500DA02E9 /* MyCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCommentCell.swift; sourceTree = "<group>"; };
+		EF562DC32122BC4900DA02E9 /* YourCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCommentCell.swift; sourceTree = "<group>"; };
 		EF63F8222106393600386756 /* CreateGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGameView.swift; sourceTree = "<group>"; };
 		EF63F8242106EC9200386756 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		EF63F8262108D1EC00386756 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -109,7 +117,11 @@
 		EF562DBA2122AAA300DA02E9 /* Comment */ = {
 			isa = PBXGroup;
 			children = (
+				EF562DBF2122B68500DA02E9 /* CommentCell.swift */,
 				EF562DBB2122AAB600DA02E9 /* MyCommentCell.xib */,
+				EF562DC12122B6F500DA02E9 /* MyCommentCell.swift */,
+				EF562DBD2122B3B100DA02E9 /* YourCommentCell.xib */,
+				EF562DC32122BC4900DA02E9 /* YourCommentCell.swift */,
 			);
 			path = Comment;
 			sourceTree = "<group>";
@@ -308,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFBDF05B2105AC4D00E285ED /* GameList.storyboard in Resources */,
+				EF562DBE2122B3B100DA02E9 /* YourCommentCell.xib in Resources */,
 				EF9554C32104498F00D4F235 /* GoogleService-Info.plist in Resources */,
 				EF9554C92104532100D4F235 /* RemoteConfigDefaults.plist in Resources */,
 				EF562DBC2122AAB600DA02E9 /* MyCommentCell.xib in Resources */,
@@ -405,7 +418,10 @@
 				EFBDF0642105AEAF00E285ED /* User.swift in Sources */,
 				EF9554DA2104609500D4F235 /* SocketIOManager.swift in Sources */,
 				EF9554D92104609500D4F235 /* ViewController.swift in Sources */,
+				EF562DC02122B68500DA02E9 /* CommentCell.swift in Sources */,
 				EF9554C52104503600D4F235 /* LoadingVC.swift in Sources */,
+				EF562DC42122BC4900DA02E9 /* YourCommentCell.swift in Sources */,
+				EF562DC22122B6F500DA02E9 /* MyCommentCell.swift in Sources */,
 				EF9554D82104609500D4F235 /* Constants.swift in Sources */,
 				EF9554DB2104609500D4F235 /* StyleGuide.swift in Sources */,
 				EFBDF0672105ED4000E285ED /* GameVC.swift in Sources */,

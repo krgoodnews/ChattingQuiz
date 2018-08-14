@@ -16,9 +16,10 @@ extension GameVC: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: messageCellID, for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: myMessageCellID, for: indexPath) as! MyCommentCell
 		
-		cell.textLabel?.text = comments[indexPath.row].message
+//		cell.textLabel?.text = comments[indexPath.row].message
+		cell.comment = self.comments[indexPath.row]
 		
 		return cell
 	}

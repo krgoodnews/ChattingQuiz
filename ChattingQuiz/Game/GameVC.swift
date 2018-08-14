@@ -23,7 +23,8 @@ class GameVC: UIViewController {
 	
 	// MARK: Cells & Games ID
 	let userCellID = "userCellID"
-	let messageCellID = "messageCellID"
+	let myMessageCellID = "myMessageCellID"
+	let yourMessageCellID = "yourMessageCellID"
 
 	
 	var gameUID: String? {
@@ -236,8 +237,8 @@ class GameVC: UIViewController {
 		messagesTableView.delegate = self
 		messagesTableView.dataSource = self
 
-		messagesTableView.register(UITableViewCell.self, forCellReuseIdentifier: messageCellID)
-		
+		messagesTableView.register(UINib(nibName: "MyCommentCell", bundle: nil), forCellReuseIdentifier: myMessageCellID)
+//		messagesTableView.register(your, forCellReuseIdentifier: <#T##String#>)
 		messagesTableView.keyboardDismissMode = .onDrag
 	}
 	
