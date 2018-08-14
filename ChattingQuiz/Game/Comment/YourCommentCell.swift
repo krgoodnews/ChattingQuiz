@@ -9,6 +9,7 @@
 import UIKit
 
 class YourCommentCell: CommentCell {
+	@IBOutlet weak var backgroundImgView: UIImageView!
 	@IBOutlet weak var messageLabel: UILabel!
 	@IBOutlet weak var userProfileView: UIView!
 	@IBOutlet weak var userNameLabel: UIView!
@@ -19,5 +20,9 @@ class YourCommentCell: CommentCell {
 		self.messageLabel.text = comment?.message
 		self.userProfileView.layer.cornerRadius = 16
 		self.userProfileView.layer.borderColor = UIColor.lavender.cgColor
+		self.userProfileView.layer.borderWidth = 1
+		
+		messageLabel.bringSubview(toFront: backgroundImgView)
+
 	}
 }

@@ -94,23 +94,31 @@ class GameVC: UIViewController {
 			"message": inputBar.messageTextField.text!,
 			"timeStamp" : ServerValue.timestamp()
 		]
+		
+		self.inputBar.messageTextField.text = ""
+
 		ref.child(gameUID ?? "error").child("comments").childByAutoId().setValue(value) { (err, ref) in
 			
 			self.ref.child(self.gameUID ?? "error").child("comments").observeSingleEvent(of: DataEventType.value, with: { (datasnapshot) in
 				let dic = datasnapshot.value as! [String:Any]
 				
 				print(dic)
-//
-//				for item in dic.keys{
-//					if(item == self.uid){
-//						continue
-//					}
-//					let user = self.users![item]
-//					self.sendGcm(pushToken: user!["pushToken"] as! String)
-//				}
-				self.inputBar.messageTextField.text = ""
+
+				self.scrollToBottom()
 			})
 		}
+	}
+	
+	func scrollToBottom(animate: Bool = false){
+		
+		DispatchQueue.main.async {
+			let lastRow = self.comments.count - 1
+			let indexPath = IndexPath(row: lastRow, section: 0)
+			
+			self.messagesTableView.scrollToRow(at: indexPath, at: .bottom, animated: animate)
+			
+		}
+		
 	}
 	
 	func fetchGame() {
@@ -148,6 +156,7 @@ class GameVC: UIViewController {
 			}
 			self.comments = self.comments.sorted(by: { $0.timeStamp! < $1.timeStamp! })
 			DispatchQueue.main.async {
+				self.scrollToBottom()
 				self.messagesTableView.reloadData()
 			}
 		}
@@ -162,12 +171,14 @@ class GameVC: UIViewController {
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
 	}
 	@objc func keyboardWillShow(notification : Notification){
-		
+		self.scrollToBottom()
+
 		if let keyboardSize = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue{
 			
 			let height = keyboardSize.height
 			inputBar.snp.updateConstraints { make -> Void in
 				make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-height)
+				make.height.equalTo(44)
 			}
 
 		}
@@ -182,6 +193,7 @@ class GameVC: UIViewController {
 //
 //			}
 //
+			
 			
 		})
 	}
@@ -238,7 +250,7 @@ class GameVC: UIViewController {
 		messagesTableView.dataSource = self
 
 		messagesTableView.register(UINib(nibName: "MyCommentCell", bundle: nil), forCellReuseIdentifier: myMessageCellID)
-//		messagesTableView.register(your, forCellReuseIdentifier: <#T##String#>)
+		messagesTableView.register(UINib(nibName: "YourCommentCell", bundle: nil), forCellReuseIdentifier: yourMessageCellID)
 		messagesTableView.keyboardDismissMode = .onDrag
 	}
 	

@@ -18,6 +18,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="263" height="70.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yourBubble" translatesAutoresizingMaskIntoConstraints="NO" id="Fl8-1E-cQB">
+                        <rect key="frame" x="51" y="-0.5" width="67.5" height="64.5"/>
+                        <rect key="contentStretch" x="0.5" y="0.5" width="0.0" height="0.0"/>
+                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDc-qb-mVF">
                         <rect key="frame" x="12" y="38.5" width="32" height="32"/>
                         <subviews>
@@ -36,30 +40,28 @@
                             <constraint firstAttribute="width" constant="32" id="ul0-q0-70c"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVA-ik-iMM">
-                        <rect key="frame" x="65" y="33.5" width="39.5" height="27"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVA-ik-iMM">
+                        <rect key="frame" x="67" y="4" width="39.5" height="56.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yourBubble" translatesAutoresizingMaskIntoConstraints="NO" id="Fl8-1E-cQB">
-                        <rect key="frame" x="51" y="29.5" width="63.5" height="35"/>
-                        <rect key="contentStretch" x="0.5" y="0.5" width="0.0" height="0.0"/>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hVA-ik-iMM" firstAttribute="bottom" secondItem="gDc-qb-mVF" secondAttribute="bottom" constant="-10" id="0iO-w0-a90"/>
-                    <constraint firstItem="Fl8-1E-cQB" firstAttribute="leading" secondItem="hVA-ik-iMM" secondAttribute="leading" constant="-14" id="9tt-jY-HQT"/>
+                    <constraint firstItem="Fl8-1E-cQB" firstAttribute="leading" secondItem="hVA-ik-iMM" secondAttribute="leading" constant="-16" id="9tt-jY-HQT"/>
                     <constraint firstItem="Fl8-1E-cQB" firstAttribute="top" secondItem="hVA-ik-iMM" secondAttribute="top" constant="-4" id="B67-XA-T7c"/>
                     <constraint firstItem="Fl8-1E-cQB" firstAttribute="bottom" secondItem="hVA-ik-iMM" secondAttribute="bottom" constant="4" id="LkQ-ep-g0w"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hVA-ik-iMM" secondAttribute="trailing" constant="50" id="V3B-p0-IqL"/>
                     <constraint firstItem="gDc-qb-mVF" firstAttribute="leading" secondItem="6wK-m6-GtR" secondAttribute="leading" constant="12" id="Vlc-Lh-Wd8"/>
+                    <constraint firstItem="hVA-ik-iMM" firstAttribute="top" secondItem="6wK-m6-GtR" secondAttribute="top" constant="4" id="Wrs-ov-oYT"/>
                     <constraint firstAttribute="bottom" secondItem="gDc-qb-mVF" secondAttribute="bottom" id="ahD-TX-Hu9"/>
-                    <constraint firstItem="Fl8-1E-cQB" firstAttribute="trailing" secondItem="hVA-ik-iMM" secondAttribute="trailing" constant="10" id="dd8-z8-pwO"/>
-                    <constraint firstItem="hVA-ik-iMM" firstAttribute="leading" secondItem="gDc-qb-mVF" secondAttribute="trailing" constant="21" id="en0-lO-Wxl"/>
+                    <constraint firstItem="Fl8-1E-cQB" firstAttribute="trailing" secondItem="hVA-ik-iMM" secondAttribute="trailing" constant="12" id="dd8-z8-pwO"/>
+                    <constraint firstItem="hVA-ik-iMM" firstAttribute="leading" secondItem="gDc-qb-mVF" secondAttribute="trailing" constant="23" id="en0-lO-Wxl"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="backgroundImgView" destination="Fl8-1E-cQB" id="WJ3-Zl-UtE"/>
                 <outlet property="messageLabel" destination="hVA-ik-iMM" id="RNa-2b-lrz"/>
                 <outlet property="userNameLabel" destination="gDc-qb-mVF" id="2oM-il-tka"/>
                 <outlet property="userProfileView" destination="gDc-qb-mVF" id="j2z-rE-BfJ"/>
