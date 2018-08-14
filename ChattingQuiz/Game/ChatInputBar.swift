@@ -17,7 +17,9 @@ class ChatInputBar: UIView {
         // Drawing code
     }
     */
-
+	@IBOutlet weak var messageTextField: UITextField!
+	@IBOutlet weak var sendButton: UIButton!
+	
 	static func initFromNib() -> ChatInputBar {
 		return Bundle.main.loadNibNamed("ChatInputBar", owner: self, options: nil)?.first as! ChatInputBar
 	}

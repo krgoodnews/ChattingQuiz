@@ -18,11 +18,13 @@ class Game: NSObject {
 	
 	var usersCount: Int = 0
 	
+	
 	public var users: Dictionary<String, Bool> = [:] // 채팅방 참여자
-	public var comments: Dictionary<String, Comment> = [:] // 채팅방 내용
+	public var comments: [String:Any] = [:] // 채팅방 내용
 	
 	public class Comment {
 		public var uid: String?
 		public var message: String?
+		public var timeStamp: Int?
 	}
 }

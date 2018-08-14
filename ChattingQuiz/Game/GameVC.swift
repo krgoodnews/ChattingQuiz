@@ -13,8 +13,6 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-fileprivate let userCellID = "userCellID"
-fileprivate let messageCellID = "messageCellID"
 
 /*
 한 게임의 컨트롤러이다.
@@ -23,11 +21,17 @@ tableView: 채팅 표시
 */
 class GameVC: UIViewController {
 	
+	// MARK: Cells & Games ID
+	let userCellID = "userCellID"
+	let messageCellID = "messageCellID"
+
+	
 	var gameUID: String? {
 		didSet {
 			self.fetchGame()
 		}
 	}
+	
 	
 	var usersUID = [String]()
 
@@ -58,11 +62,59 @@ class GameVC: UIViewController {
 	}
 	
 	
+	func setupView() {
+		setUserNavButton(userCount: 0)
+		
+		setupNavBar()
+		
+		view.addSubview(inputBar)
+		
+		inputBar.snp.remakeConstraints { make -> Void in
+			make.left.right.equalTo(self.view)
+			make.bottom.equalTo(self.view.safeAreaLayoutGuide)
+			make.height.equalTo(44)
+		}
+		
+		inputBar.sendButton.addTarget(self, action: #selector(didTapSend), for: .touchUpInside)
+		
+		setupUsersCV()
+		
+		setupMessagesTV()
+		
+	}
+	
+	@objc private func didTapSend() {
+		print("didTapSend")
+		guard let userUID = Auth.auth().currentUser?.uid else { return }
+
+		let value : Dictionary<String,Any> = [
+			"uid": userUID,
+			"message": inputBar.messageTextField.text!,
+			"timeStamp" : ServerValue.timestamp()
+		]
+		ref.child(gameUID ?? "error").child("comments").childByAutoId().setValue(value) { (err, ref) in
+			
+			self.ref.child(self.gameUID ?? "error").child("comments").observeSingleEvent(of: DataEventType.value, with: { (datasnapshot) in
+				let dic = datasnapshot.value as! [String:Any]
+				
+				print(dic)
+//
+//				for item in dic.keys{
+//					if(item == self.uid){
+//						continue
+//					}
+//					let user = self.users![item]
+//					self.sendGcm(pushToken: user!["pushToken"] as! String)
+//				}
+				self.inputBar.messageTextField.text = ""
+			})
+		}
+	}
 	
 	func fetchGame() {
 		guard let uid = gameUID else { return }
 		ref.child(uid).observe(.value) { (snapshot) in
-			let dic = snapshot.value as! [String:Any]
+			guard let dic = snapshot.value as? [String:Any] else { return }
 			self.title = dic["gameName"] as? String ?? ""
 			
 			let users = dic["users"] as? [String:Bool]
@@ -126,24 +178,6 @@ class GameVC: UIViewController {
 		ref.child(gameUID).child("users").updateChildValues(value)
 	}
 	
-	func setupView() {
-		setUserNavButton(userCount: 0)
-		
-		setupNavBar()
-		
-		view.addSubview(inputBar)
-
-		inputBar.snp.remakeConstraints { make -> Void in
-			make.left.right.equalTo(self.view)
-			make.bottom.equalTo(self.view.safeAreaLayoutGuide)
-			make.height.equalTo(44)
-		}
-		
-		setupUsersCV()
-		
-		setupMessagesTV()
-
-	}
 	private func setupNavBar() {
 		self.navigationItem.hidesBackButton = true
 		self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
@@ -225,50 +259,4 @@ class GameVC: UIViewController {
 	
 }
 
-// MARK: Collection View
-extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return usersUID.count
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: userCellID, for: indexPath) as! UserCell
-		
-		cell.userUID = usersUID[indexPath.item]
-		return cell
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-		return 2
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-		return 2
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		return CGSize(width: 60, height: 86)
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-		return UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
-	}
-	
-	
-}
 
-// MARK: Table View
-
-extension GameVC: UITableViewDelegate, UITableViewDataSource {
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 10
-	}
-	
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: messageCellID, for: indexPath)
-		
-		return cell
-	}
-	
-	
-}

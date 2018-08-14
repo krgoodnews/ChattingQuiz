@@ -62,6 +62,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="bPQ-cH-piM"/>
+            <connections>
+                <outlet property="messageTextField" destination="TyR-gF-4wZ" id="4MM-VO-2aC"/>
+                <outlet property="sendButton" destination="ZML-U3-ohs" id="002-9j-fl8"/>
+            </connections>
             <point key="canvasLocation" x="96.5" y="-241.5"/>
         </view>
     </objects>
