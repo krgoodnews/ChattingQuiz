@@ -34,7 +34,8 @@ class GameVC: UIViewController {
 	
 	
 	var usersUID = [String]()
-
+	var comments: [Game.Comment] = []
+	
 	// MARK: Views
 	
 	var usersCollectionView: UICollectionView = {
@@ -88,7 +89,7 @@ class GameVC: UIViewController {
 		guard let userUID = Auth.auth().currentUser?.uid else { return }
 
 		let value : Dictionary<String,Any> = [
-			"uid": userUID,
+			"userUID": userUID,
 			"message": inputBar.messageTextField.text!,
 			"timeStamp" : ServerValue.timestamp()
 		]
@@ -117,6 +118,7 @@ class GameVC: UIViewController {
 			guard let dic = snapshot.value as? [String:Any] else { return }
 			self.title = dic["gameName"] as? String ?? ""
 			
+			// set Users
 			let users = dic["users"] as? [String:Bool]
 			self.setUserNavButton(userCount: (users)?.count ?? 0)
 			guard let keys = users?.keys else { return }
@@ -124,6 +126,28 @@ class GameVC: UIViewController {
 			self.usersUID = keysArray
 			DispatchQueue.main.async {
 				self.usersCollectionView.reloadData()
+			}
+			
+			// set commnets
+			guard let comments = dic["comments"] as? [String: Any] else { return }
+//			guard let commentKeys = comments?.keys else { return }
+//			let commentKeysArray = Array(commentKeys)
+//			self.comments = commentKeysArray
+//
+			self.comments.removeAll()
+			for child in comments {
+				let comment = Game.Comment()
+				comment.uid = child.key
+				let value = child.value as! [String: Any]
+//				comment.setValuesForKeys(value)
+				comment.userUID = value["userUID"] as? String
+				comment.timeStamp = value["timeStamp"] as? Int
+				comment.message = value["message"] as? String
+				self.comments.append(comment)
+			}
+			self.comments = self.comments.sorted(by: { $0.timeStamp! < $1.timeStamp! })
+			DispatchQueue.main.async {
+				self.messagesTableView.reloadData()
 			}
 		}
 	}

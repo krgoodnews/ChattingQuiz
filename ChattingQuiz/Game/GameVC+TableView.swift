@@ -12,11 +12,13 @@ import UIKit
 
 extension GameVC: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 
+		return comments.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: messageCellID, for: indexPath)
+		
+		cell.textLabel?.text = comments[indexPath.row].message
 		
 		return cell
 	}

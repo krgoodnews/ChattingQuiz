@@ -22,9 +22,11 @@ class Game: NSObject {
 	public var users: Dictionary<String, Bool> = [:] // 채팅방 참여자
 	public var comments: [String:Any] = [:] // 채팅방 내용
 	
-	public class Comment {
-		public var uid: String?
-		public var message: String?
-		public var timeStamp: Int?
+	@objcMembers
+	public class Comment: NSObject {
+		var uid: String?
+		var userUID: String? // 보낸 유저의 uid
+		var message: String?
+		var timeStamp: Int?
 	}
 }
