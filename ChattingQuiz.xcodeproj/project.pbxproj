@@ -15,6 +15,7 @@
 		EF562DC02122B68500DA02E9 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DBF2122B68500DA02E9 /* CommentCell.swift */; };
 		EF562DC22122B6F500DA02E9 /* MyCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DC12122B6F500DA02E9 /* MyCommentCell.swift */; };
 		EF562DC42122BC4900DA02E9 /* YourCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DC32122BC4900DA02E9 /* YourCommentCell.swift */; };
+		EF562DC62123D07000DA02E9 /* PlayGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DC52123D07000DA02E9 /* PlayGameView.swift */; };
 		EF63F8232106393600386756 /* CreateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8222106393600386756 /* CreateGameView.swift */; };
 		EF63F8252106EC9200386756 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8242106EC9200386756 /* Chat.swift */; };
 		EF63F8272108D1EC00386756 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8262108D1EC00386756 /* UserCell.swift */; };
@@ -58,6 +59,7 @@
 		EF562DBF2122B68500DA02E9 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		EF562DC12122B6F500DA02E9 /* MyCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCommentCell.swift; sourceTree = "<group>"; };
 		EF562DC32122BC4900DA02E9 /* YourCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCommentCell.swift; sourceTree = "<group>"; };
+		EF562DC52123D07000DA02E9 /* PlayGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameView.swift; sourceTree = "<group>"; };
 		EF63F8222106393600386756 /* CreateGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGameView.swift; sourceTree = "<group>"; };
 		EF63F8242106EC9200386756 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		EF63F8262108D1EC00386756 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				EF63F8262108D1EC00386756 /* UserCell.swift */,
 				EFBDF06C2105F43F00E285ED /* ChatInputBar.swift */,
 				EFBDF06A2105EEDC00E285ED /* ChatInputBar.xib */,
+				EF562DC52123D07000DA02E9 /* PlayGameView.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				EFBDF0612105AC4D00E285ED /* GameRoomHeader.swift in Sources */,
 				EF9554CB2104540A00D4F235 /* UIColor+.swift in Sources */,
 				EF9554DC2104609500D4F235 /* GradientView.swift in Sources */,
+				EF562DC62123D07000DA02E9 /* PlayGameView.swift in Sources */,
 				EF562DB9212286EB00DA02E9 /* GameVC+TableView.swift in Sources */,
 				EF562DB7212286D300DA02E9 /* GameVC+CollectionView.swift in Sources */,
 				EF63F8292108D33C00386756 /* UIView+.swift in Sources */,

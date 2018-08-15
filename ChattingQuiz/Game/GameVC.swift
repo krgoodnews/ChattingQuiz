@@ -33,6 +33,17 @@ class GameVC: UIViewController {
 		}
 	}
 	
+	var isHideUserCV = false {
+		didSet {
+			usersCollectionView.snp.updateConstraints { make -> Void in
+				make.height.equalTo(isHideUserCV ? 0 : 80)
+			}
+			
+			UIView.animate(withDuration: 0.3, animations: {
+				self.view.layoutIfNeeded()
+			})
+		}
+	}
 	
 	var usersUID = [String]()
 	var comments: [Game.Comment] = []
@@ -47,9 +58,9 @@ class GameVC: UIViewController {
 		return cv
 	}()
 	
-	var messagesTableView = UITableView().then {
-		$0.backgroundColor = .groupTableViewBackground
-	}
+	let playGameView = PlayGameView()
+	
+	let messagesTableView = UITableView()
 	
 	var inputBar = ChatInputBar.initFromNib()
 
@@ -69,12 +80,32 @@ class GameVC: UIViewController {
 		
 		setupNavBar()
 		
-		view.addSubview(inputBar)
+		view.addSubviews(usersCollectionView, playGameView, inputBar, messagesTableView)
+		
+		
+		usersCollectionView.snp.remakeConstraints { make -> Void in
+			make.left.top.right.equalTo(self.view)
+			make.height.equalTo(80)
+		}
+		
+		playGameView.snp.remakeConstraints { make -> Void in
+			make.top.equalTo(usersCollectionView.snp.bottom)
+			make.left.right.equalTo(self.view)
+			make.height.equalTo(80)
+		}
+
 		
 		inputBar.snp.remakeConstraints { make -> Void in
 			make.left.right.equalTo(self.view)
 			make.bottom.equalTo(self.view.safeAreaLayoutGuide)
 			make.height.equalTo(44)
+		}
+		
+		
+		messagesTableView.snp.remakeConstraints { make -> Void in
+			make.top.equalTo(playGameView.snp.bottom)
+			make.left.right.equalTo(self.view)
+			make.bottom.equalTo(inputBar.snp.top)
 		}
 		
 		inputBar.sendButton.addTarget(self, action: #selector(didTapSend), for: .touchUpInside)
@@ -87,6 +118,7 @@ class GameVC: UIViewController {
 	
 	@objc private func didTapSend() {
 		print("didTapSend")
+		guard inputBar.messageTextField.text! != "" else { return }
 		guard let userUID = Auth.auth().currentUser?.uid else { return }
 
 		let value : Dictionary<String,Any> = [
@@ -112,6 +144,8 @@ class GameVC: UIViewController {
 	func scrollToBottom(animate: Bool = false){
 		
 		DispatchQueue.main.async {
+			guard self.comments.count > 0 else { return }
+			
 			let lastRow = self.comments.count - 1
 			let indexPath = IndexPath(row: lastRow, section: 0)
 			
@@ -169,9 +203,15 @@ class GameVC: UIViewController {
 		
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+		playGameView.titleButton.addTarget(self, action: #selector(didTapStart), for: .touchUpInside)
+	}
+	
+	@objc private func didTapStart() {
+		
 	}
 	@objc func keyboardWillShow(notification : Notification){
 		self.scrollToBottom()
+		isHideUserCV = true
 
 		if let keyboardSize = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue{
 			
@@ -238,13 +278,9 @@ class GameVC: UIViewController {
 		self.present(alert, animated: true, completion: nil)
 	}
 	private func setupMessagesTV() {
-		self.view.addSubview(messagesTableView)
+		messagesTableView.allowsSelection = false
+		messagesTableView.separatorStyle = .none
 		
-		messagesTableView.snp.remakeConstraints { make -> Void in
-			make.top.equalTo(usersCollectionView.snp.bottom)
-			make.left.right.equalTo(self.view)
-			make.bottom.equalTo(inputBar.snp.top)
-		}
 		
 		messagesTableView.delegate = self
 		messagesTableView.dataSource = self
@@ -256,15 +292,6 @@ class GameVC: UIViewController {
 	
 	/// 유저 목록 콜렉션뷰 추가
 	private func setupUsersCV() {
-
-		
-		self.view.addSubview(usersCollectionView)
-		
-		usersCollectionView.snp.remakeConstraints { make -> Void in
-			make.left.top.right.equalTo(self.view)
-			make.height.equalTo(90)
-		}
-		
 		usersCollectionView.register(UserCell.self, forCellWithReuseIdentifier: userCellID)
 		usersCollectionView.delegate = self
 		usersCollectionView.dataSource = self
@@ -276,7 +303,7 @@ class GameVC: UIViewController {
 		self.navigationItem.rightBarButtonItem = userCountButton
 	}
 	@objc private func didTapUserCount() {
-		
+		isHideUserCV = !isHideUserCV
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {

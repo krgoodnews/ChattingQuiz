@@ -45,7 +45,8 @@ class UserCell: UICollectionViewCell {
 	
 	let nameLabel = UILabel().then {
 		$0.textColor = .white
-		$0.numberOfLines = 2
+		$0.adjustsFontSizeToFitWidth = true
+		$0.minimumScaleFactor = 0.5
 		$0.textAlignment = .center
 		$0.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
 	}
