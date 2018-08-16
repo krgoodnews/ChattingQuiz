@@ -11,8 +11,107 @@ import Then
 import SnapKit
 
 class PlayGameView: UIView {
+	
+	var gameState: GameStateType = .wait {
+		didSet {
+			didSetState()
+		}
+	}
+	
+	func didSetState() {
+		self.titleButton.gameState = gameState
+		
+		switch gameState {
+			
+		case .wait:
+			titleButton.snp.updateConstraints { make -> Void in
+				make.top.equalTo(self).offset(10)
+				make.centerX.equalTo(self)
+				make.size.equalTo(CGSize(width: 272, height: 44))
+			}
+			
+			correctImgView.isHidden = true
+			questionLabel.isHidden = true
+			correctLabel.isHidden = true
+			
+		case .standby:
+			break
+		case .play:
+			titleButton.snp.updateConstraints { make -> Void in
+				make.top.equalTo(self).offset(10)
+				make.centerX.equalTo(self)
+				make.size.equalTo(CGSize(width: 76, height: 24))
+			}
+			correctImgView.isHidden = false
+			questionLabel.isHidden = false
+			correctLabel.isHidden = false
+			
+		case .correct:
+			break
+		case .finish:
+			break
+		}
+	}
+	
+	// MARK: View
+	let correctImgView = UIImageView().then {
+		$0.image = #imageLiteral(resourceName: "graphicCorrect")
+		$0.contentMode = .scaleAspectFit
+	}
+	
 	let titleButton = PlayGameTitleButton()
 	
+	let questionLabel = UILabel().then {
+		$0.textColor = .white
+		$0.textAlignment = .center
+		$0.font = .systemFont(ofSize: 28, weight: .bold)
+//		$0.text = "ㅇㄴㅎㅅㄴㄲ"
+		let attributedString = NSMutableAttributedString(string: "ㅇㄴㅎㅅㄴㄲ ㅇㄴㅎㅅㄴㄲ ㅇㄴㅎㅅㄴㄲ ㅇㄴㅎㅅㄴㄲ ㅇㄴㅎㅅㄴㄲ ")
+		attributedString.addAttribute(NSAttributedStringKey.kern, value: 6, range: NSRange(location: 0, length: attributedString.length))
+		$0.attributedText = attributedString
+		$0.adjustsFontSizeToFitWidth = true
+		$0.minimumScaleFactor = 0.5
+		$0.numberOfLines = 2
+	}
+	
+	let correctLabel = UILabel().then {
+		$0.text = "일이삼사오륙칠팔 님이 정답을 맞추셨습니다!"
+		$0.textColor = .white
+		$0.textAlignment = .center
+		$0.font = .systemFont(ofSize: 13, weight: .bold)
+	}
+	
+	
+	func setupView() {
+		self.backgroundColor = .vividPurple
+		addSubviews(correctImgView, titleButton, questionLabel, correctLabel)
+		
+		correctImgView.snp.remakeConstraints { make -> Void in
+			make.top.equalTo(self).offset(8)
+			make.bottom.equalTo(correctLabel.snp.top).offset(-4)
+			make.left.right.equalTo(self)
+		}
+
+		titleButton.snp.updateConstraints { make -> Void in
+			make.top.equalTo(self).offset(10)
+			make.centerX.equalTo(self)
+			make.size.equalTo(CGSize(width: 272, height: 44))
+		}
+		
+		questionLabel.snp.remakeConstraints { make -> Void in
+			make.top.equalTo(titleButton.snp.bottom).offset(16)
+			make.left.right.equalTo(self).inset(8)
+		}
+
+		
+		correctLabel.snp.remakeConstraints { make -> Void in
+			make.bottom.equalTo(self).offset(-24)
+			make.centerX.equalTo(self)
+		}
+
+		
+	}
+	// MARK: Func
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		
@@ -23,24 +122,14 @@ class PlayGameView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	func setupView() {
-		self.backgroundColor = .vividPurple
-		addSubviews(titleButton)
-		
-		titleButton.snp.updateConstraints { make -> Void in
-			make.top.equalTo(self).offset(10)
-			make.centerX.equalTo(self)
-			make.size.equalTo(CGSize(width: 272, height: 44))
-		}
 
-
-	}
 }
 
 enum GameStateType {
 	case wait
 	case standby
 	case play
+	case correct
 	case finish
 }
 class PlayGameTitleButton: UIButton {
@@ -62,8 +151,14 @@ class PlayGameTitleButton: UIButton {
 		case .standby:
 			break
 		case .play:
-			break
+			self.layer.cornerRadius = 12
+			self.backgroundColor = .white
+			self.setTitle("-- ROUND", for: .normal)
+			self.setTitleColor(.vividPurple, for: .normal)
+			self.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
 		case .finish:
+			break
+		case .correct:
 			break
 		}
 	}

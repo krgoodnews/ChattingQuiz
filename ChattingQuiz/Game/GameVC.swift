@@ -45,6 +45,12 @@ class GameVC: UIViewController {
 		}
 	}
 	
+	var gameState: GameStateType = .wait {
+		didSet {
+			didSetState()
+		}
+	}
+	
 	var usersUID = [String]()
 	var comments: [Game.Comment] = []
 	
@@ -207,6 +213,7 @@ class GameVC: UIViewController {
 	}
 	
 	@objc private func didTapStart() {
+		self.gameState = .play
 		
 	}
 	@objc func keyboardWillShow(notification : Notification){
@@ -319,6 +326,40 @@ class GameVC: UIViewController {
 		guard let uid = Auth.auth().currentUser?.uid else { return }
 		
 		ref.child(gameUID).child("users").child(uid).removeValue()
+	}
+	
+	func didSetState() {
+		playGameView.gameState = gameState
+		
+		switch gameState {
+			
+		case .wait:
+			playGameView.snp.updateConstraints { make -> Void in
+				make.height.equalTo(80)
+			}
+
+		case .standby:
+			self.isHideUserCV = true
+			playGameView.snp.updateConstraints { make -> Void in
+				make.height.equalTo(164)
+			}
+		case .play:
+			self.isHideUserCV = true
+			playGameView.snp.updateConstraints { make -> Void in
+				make.height.equalTo(164)
+			}
+		case .finish:
+			self.isHideUserCV = true
+			playGameView.snp.updateConstraints { make -> Void in
+				make.height.equalTo(164)
+			}
+		case .correct:
+			break
+		}
+		
+		UIView.animate(withDuration: 0.3, animations: {
+			self.view.layoutIfNeeded()
+		})
 	}
 	
 }

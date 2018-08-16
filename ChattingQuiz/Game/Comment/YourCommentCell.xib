@@ -63,7 +63,7 @@
             <connections>
                 <outlet property="backgroundImgView" destination="Fl8-1E-cQB" id="WJ3-Zl-UtE"/>
                 <outlet property="messageLabel" destination="hVA-ik-iMM" id="RNa-2b-lrz"/>
-                <outlet property="userNameLabel" destination="gDc-qb-mVF" id="2oM-il-tka"/>
+                <outlet property="userNameLabel" destination="WCe-dt-Dao" id="8GB-fo-tak"/>
                 <outlet property="userProfileView" destination="gDc-qb-mVF" id="j2z-rE-BfJ"/>
             </connections>
             <point key="canvasLocation" x="-41.5" y="-158.5"/>
