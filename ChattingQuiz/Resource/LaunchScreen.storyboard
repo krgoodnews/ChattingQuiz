@@ -23,6 +23,10 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amathon 12 Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kil-jP-2kJ">
                                 <rect key="frame" x="136.5" y="628.5" width="103" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="A4Q-zv-mst"/>
+                                    <constraint firstAttribute="height" constant="14.5" id="ZuC-qo-Pxm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.60779517889022827" green="0.60787016153335571" blue="0.6077696681022644" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="144" id="iDc-ma-nzi" customClass="MyCommentCell" customModule="ChattingQuiz" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="569" height="174"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iDc-ma-nzi" id="1uU-3i-kI3">
+                <rect key="frame" x="0.0" y="0.0" width="569" height="173.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myBubble" translatesAutoresizingMaskIntoConstraints="NO" id="fWU-IK-mtM">
+                        <rect key="frame" x="103.5" y="6" width="449.5" height="165"/>
+                        <rect key="contentStretch" x="0.5" y="0.5" width="0.0" height="0.0"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCy-i7-Qnk">
+                        <rect key="frame" x="115" y="14" width="420.5" height="149"/>
+                        <mutableString key="text">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </mutableString>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="zCy-i7-Qnk" secondAttribute="trailing" constant="13" id="4fr-FF-yyk"/>
+                    <constraint firstItem="fWU-IK-mtM" firstAttribute="top" secondItem="zCy-i7-Qnk" secondAttribute="top" constant="-8" id="JVA-W8-jF2"/>
+                    <constraint firstItem="zCy-i7-Qnk" firstAttribute="top" secondItem="1uU-3i-kI3" secondAttribute="topMargin" constant="3" id="MRU-Gb-2jh"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="zCy-i7-Qnk" secondAttribute="bottom" id="N3F-D8-i0u"/>
+                    <constraint firstItem="zCy-i7-Qnk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1uU-3i-kI3" secondAttribute="leadingMargin" constant="65" id="UGb-7Q-rzA"/>
+                    <constraint firstItem="fWU-IK-mtM" firstAttribute="bottom" secondItem="zCy-i7-Qnk" secondAttribute="bottom" constant="8" id="c4M-4l-MmK"/>
+                    <constraint firstItem="fWU-IK-mtM" firstAttribute="leading" secondItem="zCy-i7-Qnk" secondAttribute="leading" constant="-12" id="ma1-dy-0tk"/>
+                    <constraint firstItem="fWU-IK-mtM" firstAttribute="trailing" secondItem="zCy-i7-Qnk" secondAttribute="trailing" constant="17" id="unM-A4-woP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="backgroundImgView" destination="fWU-IK-mtM" id="l74-ID-9iu"/>
+                <outlet property="messageLabel" destination="zCy-i7-Qnk" id="OOO-5H-dmm"/>
+            </connections>
+            <point key="canvasLocation" x="-13.5" y="-69"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="myBubble" width="40" height="35"/>
+    </resources>
+</document>

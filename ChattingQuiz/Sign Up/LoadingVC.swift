@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import Then
 import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class LoadingVC: ViewController {
 	
@@ -37,8 +39,7 @@ class LoadingVC: ViewController {
 	}
 	
 	private func fetchConfig() {
-//		welcomeLabel.text = remoteConfig[loadingPhraseConfigKey].stringValue
-		remoteConfig.fetch(withExpirationDuration: TimeInterval(1)) { (status, error) -> Void in
+		remoteConfig.fetch(withExpirationDuration: TimeInterval(0)) { (status, error) -> Void in
 			if status == .success {
 				print("---  Config fetched!")
 				self.remoteConfig.activateFetched()
@@ -51,7 +52,6 @@ class LoadingVC: ViewController {
 	}
 	
 	func didFetchComplete() {
-		let color = remoteConfig["splash_background"].stringValue
 		let caps = remoteConfig["splash_message_caps"].boolValue
 		let message = remoteConfig["splash_message"].stringValue
 		
@@ -65,18 +65,37 @@ class LoadingVC: ViewController {
 			self.present(alert, animated: true)
 			
 		} else { // 로그인 화면으로 넘어가기
-			guard let signUpVC = UIStoryboard(name: "SignUp", bundle: nil).instantiateInitialViewController() else { return }
+			guard let uid = Auth.auth().currentUser?.uid else {
+				self.openSignUp()
+				return
+			}
 			
-			self.present(signUpVC, animated: true)
+			let ref = Database.database().reference()
+			ref.child("users").child(uid).observe(.value) { (snapshot) in
+				if snapshot.exists() {
+					self.openGameList()
+				} else {
+					self.openSignUp()
+				}
+			}
 		}
-		
-		self.view.backgroundColor = UIColor(color ?? "#FFFFFF")
 		
 	}
 	
+	private func openGameList() {
+		guard let gameListVC = UIStoryboard(name: "GameList", bundle: nil).instantiateInitialViewController() else { return }
+		
+		self.present(gameListVC, animated: true, completion: nil)
+	}
+	
+	private func openSignUp() {
+		guard let signUpVC = UIStoryboard(name: "SignUp", bundle: nil).instantiateInitialViewController() else { return }
+		
+		self.present(signUpVC, animated: true)
+	}
 	private func setupViews() {
 		view.addSubview(imgView)
-		
+
 		imgView.snp.remakeConstraints { make -> Void in
 			make.centerX.equalTo(self.view)
 			make.centerY.equalTo(self.view).offset(-60)

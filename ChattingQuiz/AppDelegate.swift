@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.window = window
 		self.window?.makeKeyAndVisible()
 		
-		FirebaseApp.configure()
+		FirebaseApp.configure()	// 이게 rootVC 관련 코드보다 아래에 있어야 한다.
 		
 		return true
 	}

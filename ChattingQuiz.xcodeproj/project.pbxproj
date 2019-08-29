@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		8CA7F7A87732D456756743BD /* Pods_ChattingQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A868AF60913E5F7600D3E2 /* Pods_ChattingQuiz.framework */; };
+		EF562DB7212286D300DA02E9 /* GameVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DB6212286D300DA02E9 /* GameVC+CollectionView.swift */; };
+		EF562DB9212286EB00DA02E9 /* GameVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DB8212286EB00DA02E9 /* GameVC+TableView.swift */; };
+		EF562DBC2122AAB600DA02E9 /* MyCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF562DBB2122AAB600DA02E9 /* MyCommentCell.xib */; };
+		EF562DBE2122B3B100DA02E9 /* YourCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF562DBD2122B3B100DA02E9 /* YourCommentCell.xib */; };
+		EF562DC02122B68500DA02E9 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DBF2122B68500DA02E9 /* CommentCell.swift */; };
+		EF562DC22122B6F500DA02E9 /* MyCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DC12122B6F500DA02E9 /* MyCommentCell.swift */; };
+		EF562DC42122BC4900DA02E9 /* YourCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DC32122BC4900DA02E9 /* YourCommentCell.swift */; };
+		EF562DC62123D07000DA02E9 /* PlayGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF562DC52123D07000DA02E9 /* PlayGameView.swift */; };
+		EF63F8232106393600386756 /* CreateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8222106393600386756 /* CreateGameView.swift */; };
+		EF63F8252106EC9200386756 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8242106EC9200386756 /* Chat.swift */; };
+		EF63F8272108D1EC00386756 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8262108D1EC00386756 /* UserCell.swift */; };
+		EF63F8292108D33C00386756 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63F8282108D33C00386756 /* UIView+.swift */; };
 		EF9554B1210447CE00D4F235 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9554B0210447CE00D4F235 /* AppDelegate.swift */; };
 		EF9554B6210447CE00D4F235 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9554B4210447CE00D4F235 /* Main.storyboard */; };
 		EF9554B8210447D100D4F235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9554B7210447D100D4F235 /* Assets.xcassets */; };
@@ -23,11 +35,35 @@
 		EF9554DA2104609500D4F235 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9554D42104609500D4F235 /* SocketIOManager.swift */; };
 		EF9554DB2104609500D4F235 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9554D52104609500D4F235 /* StyleGuide.swift */; };
 		EF9554DC2104609500D4F235 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9554D72104609500D4F235 /* GradientView.swift */; };
+		EFBDF05B2105AC4D00E285ED /* GameList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFBDF0542105AC4800E285ED /* GameList.storyboard */; };
+		EFBDF05C2105AC4D00E285ED /* GameRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBDF0552105AC4900E285ED /* GameRoomCell.swift */; };
+		EFBDF05D2105AC4D00E285ED /* CreateGame.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFBDF0562105AC4A00E285ED /* CreateGame.xib */; };
+		EFBDF05E2105AC4D00E285ED /* GameListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBDF0572105AC4A00E285ED /* GameListVC.swift */; };
+		EFBDF05F2105AC4D00E285ED /* GameRoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFBDF0582105AC4B00E285ED /* GameRoomCell.xib */; };
+		EFBDF0612105AC4D00E285ED /* GameRoomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBDF05A2105AC4C00E285ED /* GameRoomHeader.swift */; };
+		EFBDF0642105AEAF00E285ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBDF0632105AEAF00E285ED /* User.swift */; };
+		EFBDF0672105ED4000E285ED /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBDF0662105ED4000E285ED /* GameVC.swift */; };
+		EFBDF0692105EDE100E285ED /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBDF0682105EDE100E285ED /* Game.swift */; };
+		EFBDF06B2105EEDC00E285ED /* ChatInputBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFBDF06A2105EEDC00E285ED /* ChatInputBar.xib */; };
+		EFBDF06D2105F43F00E285ED /* ChatInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBDF06C2105F43F00E285ED /* ChatInputBar.swift */; };
+		EFBDF06F2105F77F00E285ED /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFBDF06E2105F77F00E285ED /* Game.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1DE49AB5BD737BAD09C48806 /* Pods-ChattingQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattingQuiz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChattingQuiz/Pods-ChattingQuiz.debug.xcconfig"; sourceTree = "<group>"; };
 		40A868AF60913E5F7600D3E2 /* Pods_ChattingQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChattingQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF562DB6212286D300DA02E9 /* GameVC+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameVC+CollectionView.swift"; sourceTree = "<group>"; };
+		EF562DB8212286EB00DA02E9 /* GameVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameVC+TableView.swift"; sourceTree = "<group>"; };
+		EF562DBB2122AAB600DA02E9 /* MyCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCommentCell.xib; sourceTree = "<group>"; };
+		EF562DBD2122B3B100DA02E9 /* YourCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourCommentCell.xib; sourceTree = "<group>"; };
+		EF562DBF2122B68500DA02E9 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		EF562DC12122B6F500DA02E9 /* MyCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCommentCell.swift; sourceTree = "<group>"; };
+		EF562DC32122BC4900DA02E9 /* YourCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCommentCell.swift; sourceTree = "<group>"; };
+		EF562DC52123D07000DA02E9 /* PlayGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameView.swift; sourceTree = "<group>"; };
+		EF63F8222106393600386756 /* CreateGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGameView.swift; sourceTree = "<group>"; };
+		EF63F8242106EC9200386756 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		EF63F8262108D1EC00386756 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		EF63F8282108D33C00386756 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		EF9554AD210447CE00D4F235 /* ChattingQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChattingQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF9554B0210447CE00D4F235 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF9554B5210447CE00D4F235 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,6 +81,18 @@
 		EF9554D42104609500D4F235 /* SocketIOManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		EF9554D52104609500D4F235 /* StyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		EF9554D72104609500D4F235 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		EFBDF0542105AC4800E285ED /* GameList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameList.storyboard; sourceTree = "<group>"; };
+		EFBDF0552105AC4900E285ED /* GameRoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoomCell.swift; sourceTree = "<group>"; };
+		EFBDF0562105AC4A00E285ED /* CreateGame.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateGame.xib; sourceTree = "<group>"; };
+		EFBDF0572105AC4A00E285ED /* GameListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListVC.swift; sourceTree = "<group>"; };
+		EFBDF0582105AC4B00E285ED /* GameRoomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameRoomCell.xib; sourceTree = "<group>"; };
+		EFBDF05A2105AC4C00E285ED /* GameRoomHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoomHeader.swift; sourceTree = "<group>"; };
+		EFBDF0632105AEAF00E285ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EFBDF0662105ED4000E285ED /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		EFBDF0682105EDE100E285ED /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		EFBDF06A2105EEDC00E285ED /* ChatInputBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatInputBar.xib; sourceTree = "<group>"; };
+		EFBDF06C2105F43F00E285ED /* ChatInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputBar.swift; sourceTree = "<group>"; };
+		EFBDF06E2105F77F00E285ED /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		F68A25029B196F2CD778817F /* Pods-ChattingQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattingQuiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChattingQuiz/Pods-ChattingQuiz.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +114,18 @@
 				40A868AF60913E5F7600D3E2 /* Pods_ChattingQuiz.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF562DBA2122AAA300DA02E9 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				EF562DBF2122B68500DA02E9 /* CommentCell.swift */,
+				EF562DBB2122AAB600DA02E9 /* MyCommentCell.xib */,
+				EF562DC12122B6F500DA02E9 /* MyCommentCell.swift */,
+				EF562DBD2122B3B100DA02E9 /* YourCommentCell.xib */,
+				EF562DC32122BC4900DA02E9 /* YourCommentCell.swift */,
+			);
+			path = Comment;
 			sourceTree = "<group>";
 		};
 		EF9554A4210447CE00D4F235 = {
@@ -90,8 +150,11 @@
 			isa = PBXGroup;
 			children = (
 				EF9554B0210447CE00D4F235 /* AppDelegate.swift */,
+				EFBDF0622105AEA400E285ED /* Model */,
 				EF9554D12104609500D4F235 /* Basic Source */,
 				EF9554D02104607800D4F235 /* Sign Up */,
+				EFBDF0652105ED1A00E285ED /* Game */,
+				EFBDF0532105AC2100E285ED /* GameList */,
 				EF9554B4210447CE00D4F235 /* Main.storyboard */,
 				EF9554DF210460CD00D4F235 /* Resource */,
 				EF9554BC210447D100D4F235 /* Info.plist */,
@@ -119,6 +182,7 @@
 				EF9554D42104609500D4F235 /* SocketIOManager.swift */,
 				EF9554D52104609500D4F235 /* StyleGuide.swift */,
 				EF9554D62104609500D4F235 /* View */,
+				EF63F8282108D33C00386756 /* UIView+.swift */,
 			);
 			path = "Basic Source";
 			sourceTree = "<group>";
@@ -147,6 +211,46 @@
 				EF9554C62104506400D4F235 /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		EFBDF0532105AC2100E285ED /* GameList */ = {
+			isa = PBXGroup;
+			children = (
+				EFBDF0562105AC4A00E285ED /* CreateGame.xib */,
+				EF63F8222106393600386756 /* CreateGameView.swift */,
+				EFBDF0542105AC4800E285ED /* GameList.storyboard */,
+				EFBDF0572105AC4A00E285ED /* GameListVC.swift */,
+				EFBDF0552105AC4900E285ED /* GameRoomCell.swift */,
+				EFBDF0582105AC4B00E285ED /* GameRoomCell.xib */,
+				EFBDF05A2105AC4C00E285ED /* GameRoomHeader.swift */,
+			);
+			path = GameList;
+			sourceTree = "<group>";
+		};
+		EFBDF0622105AEA400E285ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFBDF0632105AEAF00E285ED /* User.swift */,
+				EFBDF0682105EDE100E285ED /* Game.swift */,
+				EF63F8242106EC9200386756 /* Chat.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EFBDF0652105ED1A00E285ED /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				EF562DBA2122AAA300DA02E9 /* Comment */,
+				EFBDF0662105ED4000E285ED /* GameVC.swift */,
+				EF562DB6212286D300DA02E9 /* GameVC+CollectionView.swift */,
+				EF562DB8212286EB00DA02E9 /* GameVC+TableView.swift */,
+				EFBDF06E2105F77F00E285ED /* Game.storyboard */,
+				EF63F8262108D1EC00386756 /* UserCell.swift */,
+				EFBDF06C2105F43F00E285ED /* ChatInputBar.swift */,
+				EFBDF06A2105EEDC00E285ED /* ChatInputBar.xib */,
+				EF562DC52123D07000DA02E9 /* PlayGameView.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		FFA6CC1148AC9103CCB792EB /* Pods */ = {
@@ -218,11 +322,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFBDF05B2105AC4D00E285ED /* GameList.storyboard in Resources */,
+				EF562DBE2122B3B100DA02E9 /* YourCommentCell.xib in Resources */,
 				EF9554C32104498F00D4F235 /* GoogleService-Info.plist in Resources */,
 				EF9554C92104532100D4F235 /* RemoteConfigDefaults.plist in Resources */,
+				EF562DBC2122AAB600DA02E9 /* MyCommentCell.xib in Resources */,
 				EF9554CE2104607500D4F235 /* SignUp.storyboard in Resources */,
 				EF9554C72104506400D4F235 /* LaunchScreen.storyboard in Resources */,
 				EF9554B8210447D100D4F235 /* Assets.xcassets in Resources */,
+				EFBDF05F2105AC4D00E285ED /* GameRoomCell.xib in Resources */,
+				EFBDF05D2105AC4D00E285ED /* CreateGame.xib in Resources */,
+				EFBDF06B2105EEDC00E285ED /* ChatInputBar.xib in Resources */,
+				EFBDF06F2105F77F00E285ED /* Game.storyboard in Resources */,
 				EF9554B6210447CE00D4F235 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,24 +368,32 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ChattingQuiz/Pods-ChattingQuiz-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Chatto/Chatto.framework",
 				"${BUILT_PRODUCTS_DIR}/ChattoAdditions/ChattoAdditions.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Chatto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChattoAdditions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,15 +408,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFBDF05C2105AC4D00E285ED /* GameRoomCell.swift in Sources */,
+				EFBDF0612105AC4D00E285ED /* GameRoomHeader.swift in Sources */,
 				EF9554CB2104540A00D4F235 /* UIColor+.swift in Sources */,
 				EF9554DC2104609500D4F235 /* GradientView.swift in Sources */,
+				EF562DC62123D07000DA02E9 /* PlayGameView.swift in Sources */,
+				EF562DB9212286EB00DA02E9 /* GameVC+TableView.swift in Sources */,
+				EF562DB7212286D300DA02E9 /* GameVC+CollectionView.swift in Sources */,
+				EF63F8292108D33C00386756 /* UIView+.swift in Sources */,
 				EF9554B1210447CE00D4F235 /* AppDelegate.swift in Sources */,
 				EF9554CF2104607500D4F235 /* SignUpVC.swift in Sources */,
+				EF63F8272108D1EC00386756 /* UserCell.swift in Sources */,
+				EFBDF0642105AEAF00E285ED /* User.swift in Sources */,
 				EF9554DA2104609500D4F235 /* SocketIOManager.swift in Sources */,
 				EF9554D92104609500D4F235 /* ViewController.swift in Sources */,
+				EF562DC02122B68500DA02E9 /* CommentCell.swift in Sources */,
 				EF9554C52104503600D4F235 /* LoadingVC.swift in Sources */,
+				EF562DC42122BC4900DA02E9 /* YourCommentCell.swift in Sources */,
+				EF562DC22122B6F500DA02E9 /* MyCommentCell.swift in Sources */,
 				EF9554D82104609500D4F235 /* Constants.swift in Sources */,
 				EF9554DB2104609500D4F235 /* StyleGuide.swift in Sources */,
+				EFBDF0672105ED4000E285ED /* GameVC.swift in Sources */,
+				EF63F8252106EC9200386756 /* Chat.swift in Sources */,
+				EFBDF05E2105AC4D00E285ED /* GameListVC.swift in Sources */,
+				EFBDF06D2105F43F00E285ED /* ChatInputBar.swift in Sources */,
+				EF63F8232106393600386756 /* CreateGameView.swift in Sources */,
+				EFBDF0692105EDE100E285ED /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
